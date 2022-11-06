@@ -26,15 +26,8 @@ $(function(){
        </tr> 
   `;
  //HTML上に表示//
-  $("#product").append(html);
+  $("#list").append(html);
   });
-
-
-
-
-
-
-
 
 
  //クリアボタン押下でローカルストレージから削除、HTML上も削除//
@@ -56,6 +49,8 @@ $(function(){
     `;
  $("#list").append(html);
  }
+
+
 
 
 
