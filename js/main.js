@@ -3,8 +3,6 @@ $(function(){
   var now_date  = new Date();
   var now_month = now_date.getFullYear()+ '/' +(now_date.getMonth()+1);
   $("#target_month").append(now_month);
-
- 
 });
  
 
@@ -13,15 +11,19 @@ $(function(){
   $("#add").on("click", function(){
     let product_name = $("#product_name").val();
     let product_price = $("#product_price").val();
+    let date = $("#date").val();
     console.log(product_name,"データ入れて");
     console.log(product_price,"データ入れて");
+    console.log(date,"データ入れて");
+
 
  //ローカルストレージに保存//   
-  localStorage.setItem(product_name,product_price)
+  localStorage.setItem(date,product_name,product_price)
 
   const html = `
        <tr>
-          <th>${product_name}</th>
+          <td>${date}</td>
+          <td>${product_name}</td>
           <td>${product_price}</td>
        </tr> 
   `;
