@@ -10,7 +10,7 @@
 <body>
  
 
-  <div class="content">
+  <main>
     <p><b>日付：<span id="target_month"></span></b></p>
     <p>
       <a id="get_before_month" href="javascript:void(0);">＜＜前月</a>
@@ -20,22 +20,33 @@
       <input type="button" id="clear" value="クリア">
       <a id="get_next_month" href="javascript:void(0);">翌月＞＞</a>
     </p>
-    <table>
+  
+  <table id="list">
+    <!-- ここに追加データが挿入される -->
+  </table>
+    <!-- <table id="list">
+
+    </table> -->
+    <!-- <table>
       <thead>
         <tr>
           <th width="25%">日付</th>
-          <th width="40%">商品</th>
+          <th  width="40%">商品</th>
           <th width="25%">価格</th>
           <th width="10%"></th>
         </tr>
       </thead>
       <tbody>
       </tbody>
-    </table>
+    </table> -->
+
+
+</main>
+
   <div>
     <b><p class="sum_price">合計：0円</p></b>
   </div>
-</div>
+
 
 
 
