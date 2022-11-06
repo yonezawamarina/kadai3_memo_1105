@@ -3,6 +3,8 @@ $(function(){
   var now_date  = new Date();
   var now_month = now_date.getFullYear()+ '/' +(now_date.getMonth()+1);
   $("#target_month").append(now_month);
+
+ 
 });
  
 
@@ -24,8 +26,14 @@ $(function(){
        </tr> 
   `;
  //HTML上に表示//
-  $("#list").append(html);
+  $("#product").append(html);
   });
+
+
+
+
+
+
 
 
 
@@ -37,19 +45,6 @@ $(function(){
 
   
 //リロードしても、ローカルストレージから繰返し読込続ける//
-  //  for(let i = 0; i < localStorage.length; i++){
-  //    const product_name = localStorage.key(i);
-  //    const product_price = localStorage.getItem(key);
-  //    const html = `
-  //  <tr> 
-  //    <th>${product_name}</th>
-  //    <td>${product_price}</td>
-  //  </tr>
-  //    `;
-
-  // $("#list").append(html);
-
-  //  }
    for(let i = 0; i < localStorage.length; i++){
     const product_name = localStorage.key(i);
     const product_price = localStorage.getItem(product_name);
@@ -59,10 +54,9 @@ $(function(){
    <td>${product_price}</td>
  </tr>  
     `;
-  
  $("#list").append(html);
- 
  }
+
 
 
 
