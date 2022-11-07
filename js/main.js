@@ -4,21 +4,18 @@ $(function(){
   var now_month = now_date.getFullYear()+ '/' +(now_date.getMonth()+1);
   $("#target_month").append(now_month);
 });
+
  
-
-
 //商品名と価格をとってくる。追加ボタン押下で表示//
   $("#add").on("click", function(){
     let product_name = $("#product_name").val();
     let product_price = $("#product_price").val();
-    let date = $("#date").val();
     console.log(product_name,"データ入れて");
     console.log(product_price,"データ入れて");
-    console.log(date,"データ入れて");
 
 
  //ローカルストレージに保存//   
-  localStorage.setItem(date,product_name,product_price)
+  localStorage.setItem(product_name,product_price)
 
   const html = `
        <tr>
@@ -36,7 +33,7 @@ $(function(){
    $("#clear").on("click", function(){
      localStorage.clear();
      $("#list").empty();
-   });
+   });;
 
   
 //リロードしても、ローカルストレージから繰返し読込続ける//
@@ -45,7 +42,8 @@ $(function(){
     const product_price = localStorage.getItem(product_name);
     const html = `
  <tr>
-   <th>${product_name}</th>
+   <td>${date}</td>
+   <td>${product_name}</td>
    <td>${product_price}</td>
  </tr>  
     `;
@@ -54,8 +52,24 @@ $(function(){
 
 
 
-
-
+  // 合計値を求める
+  function sum(){
+    // 表の金額を取得する
+    var pricelist = $("table th[class=price]").map(function(index, val){
+      var price = parseInt($(val).text());
+      if(price >= 0) {
+        return price;
+      } else {
+        return null;
+      }
+    });
+    // 価格の合計を求める
+    var total = 0;
+    pricelist.each(function(index, val){
+      total = total + val;
+    });
+    $(".sum_price").text("合計："+total+"円");
+  }
 
 
 
