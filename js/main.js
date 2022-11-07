@@ -52,7 +52,7 @@ $(function(){
 
 
 
-  // 合計値を求める
+  // 合計値を求めたい①/////////////////////////////////////////
   function sum(){
     // 表の金額を取得する
     var pricelist = $("table th[class=price]").map(function(index, val){
@@ -71,8 +71,19 @@ $(function(){
     $(".sum_price").text("合計："+total+"円");
   }
 
+/////////////////////////////////////////////////////////
 
 
 
 
-
+//合計出したい②//////////////////////////////////////////////////
+  function sum () {
+    var tableElem = document.getElementById('list');
+    var rowElems = tableElem.rows;
+    var price = 0;
+    for (i = 0, len = rowElems.length - 1; i < len; i++) {
+        price += parseInt(rowElems[i].cells[3].innerText);
+    }
+    document.getElementById('sum_price').innerText = price;
+}
+/////////////////////////////////////////////////////////
