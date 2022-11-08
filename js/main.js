@@ -23,9 +23,16 @@ $(function(){
           <td>${product_name}</td>
           <td>${product_price}</td>
        </tr> 
-  `;
- //HTML上に表示//
+ `;
+ //HTML上に表示//   //削除ボタン作成//
   $("#list").append(html);
+
+
+  /////////////削除ボタン表示させる//////////
+  // <input type="button" id="delete" value="削除"></input>
+
+
+
   });
 
 
@@ -54,14 +61,6 @@ for (let i = 0; i < localStorage.length; i++) {
   $(".sum_price").text("合計：" + total + "円");
   $("#list").append(html);
 }
-
-
-
-
-
-
-
-
 
 
 
