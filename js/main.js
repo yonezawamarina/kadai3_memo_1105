@@ -36,54 +36,40 @@ $(function(){
    });;
 
   
+
 //リロードしても、ローカルストレージから繰返し読込続ける//
-   for(let i = 0; i < localStorage.length; i++){
-    const product_name = localStorage.key(i);
-    const product_price = localStorage.getItem(product_name);
-    const html = `
+let total = 0;
+for (let i = 0; i < localStorage.length; i++) {
+  const product_name = localStorage.key(i);
+  const product_price = localStorage.getItem(product_name);
+  console.log(product_price);
+  const html = `
  <tr>
    <td>${date}</td>
    <td>${product_name}</td>
    <td>${product_price}</td>
- </tr>  
+ </tr>
     `;
- $("#list").append(html);
- }
-
-
-
-  // 合計値を求めたい①/////////////////////////////////////////
-  function sum(){
-    // 表の金額を取得する
-    var pricelist = $("table th[class=price]").map(function(index, val){
-      var price = parseInt($(val).text());
-      if(price >= 0) {
-        return price;
-      } else {
-        return null;
-      }
-    });
-    // 価格の合計を求める
-    var total = 0;
-    pricelist.each(function(index, val){
-      total = total + val;
-    });
-    $(".sum_price").text("合計："+total+"円");
-  }
-
-/////////////////////////////////////////////////////////
-
-
-
-
-//合計出したい②//////////////////////////////////////////////////
-  function sum () {
-    var tableElem = document.getElementById('list');
-    var rowElems = tableElem.rows;
-    var price = 0;
-    for (i = 0, len = rowElems.length - 1; i < len; i++) {
-        price += parseInt(rowElems[i].cells[3].innerText);
-    }
-    document.getElementById('sum_price').innerText = price;
+  total += Number(product_price);
+  $(".sum_price").text("合計：" + total + "円");
+  $("#list").append(html);
 }
-/////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
