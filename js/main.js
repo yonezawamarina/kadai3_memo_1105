@@ -62,11 +62,15 @@ for (let i = 0; i < localStorage.length; i++) {
 // .length: Storage データアイテムの数を表す整数を返す//
 //ストレージ内で n 番目のキーなのか//
 //.removeitem(): ストレージからｎ番目のキーを削除//
+
+
 $(".delete").on("click", function(){    
 for (var i = 0; i < localStorage.length; i++) {
   var key = localStorage.key(i);
-  if (key !== 'data') localStorage.removeItem(key);}
+  if (key !== 'data') localStorage.removeItem(key);
+}
 $("#list").empty();
+
 });;
 
 
