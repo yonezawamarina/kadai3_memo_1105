@@ -14,7 +14,7 @@ $(function(){
     console.log(product_price,"データ入れて");
 
 
- //ローカルストレージに保存//   
+ //ローカルストレージに保存////削除ボタン//   
   localStorage.setItem(product_name,product_price)
 
   const html = `
@@ -22,17 +22,11 @@ $(function(){
           <td>${date}</td>
           <td>${product_name}</td>
           <td>${product_price}</td>
+          <td><input type="button" class="delete" value="削除"></input></td>
        </tr> 
  `;
- //HTML上に表示//   //削除ボタン作成//
+ //HTML上に表示//   
   $("#list").append(html);
-
-
-  /////////////削除ボタン表示させる//////////
-  // <input type="button" id="delete" value="削除"></input>
-
-
-
   });
 
 
@@ -64,8 +58,16 @@ for (let i = 0; i < localStorage.length; i++) {
 
 
 
-
-
+//削除ボタン押下でやりたいこと↓//
+// .length: Storage データアイテムの数を表す整数を返す//
+//ストレージ内で n 番目のキーなのか//
+//.removeitem(): ストレージからｎ番目のキーを削除//
+$(".delete").on("click", function(){    
+for (var i = 0; i < localStorage.length; i++) {
+  var key = localStorage.key(i);
+  if (key !== 'data') localStorage.removeItem(key);}
+$("#list").empty();
+});;
 
 
 
