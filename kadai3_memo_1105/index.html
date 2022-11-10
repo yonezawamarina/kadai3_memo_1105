@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ 
+
+  <main>
+    <p><b>日付：<span id="target_month"></span></b></p>
+    <p>
+      <a id="get_before_month" href="javascript:void(0);">＜＜前月</a>
+      <!-- <input type="text" id="date" placeholder="日付"> -->
+      <input type="text" id="product_name" placeholder="商品">
+      <input type="text" id="product_price" placeholder="価格">
+      <input type="button" id="add" value="追加">
+      <input type="button" id="clear" value="クリア">
+      <a id="get_next_month" href="javascript:void(0);">翌月＞＞</a>
+    </p>
+  
+
+<tr>
+  <table id="list">
+    <!-- <th id="date">日付</th> -->
+    <th id="product">商品</th>
+    <th id="price">価格</th>
+</table>
+</tr>
+
+
+  <div>
+    <b><p class="sum_price">合計：0円</p></b>
+  </div>
+
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
