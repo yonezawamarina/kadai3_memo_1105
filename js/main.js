@@ -19,7 +19,6 @@ $(function(){
 
   const html = `
        <tr>
-          <td>${date}</td>
           <td>${product_name}</td>
           <td>${product_price}</td>
           <td><input type="button" class="delete" value="削除"></input></td>
@@ -46,7 +45,7 @@ for (let i = 0; i < localStorage.length; i++) {
   console.log(product_price);
   const html = `
  <tr>
-   <td>${date}</td>
+   
    <td>${product_name}</td>
    <td>${product_price}</td>
  </tr>
@@ -63,18 +62,18 @@ for (let i = 0; i < localStorage.length; i++) {
 //ストレージ内で n 番目のキーなのか//
 //.removeitem(): ストレージからｎ番目のキーを削除//
 
-
-$(".delete").on("click", function(){    
-for (var i = 0; i < localStorage.length; i++) {
+$(document).on('click', '.delete', function() {
+  for (var i = 0; i < localStorage.length; i++) {
   var key = localStorage.key(i);
-  if (key !== 'data') localStorage.removeItem(key);
-}
-$("#list").empty();
+  localStorage.removeItem(key);
+// $("#list").empty();
 
-});;
+  //この中に処理を書く、まずはクリックしたらアラートが出るか確かめてみましょう！
+    alert(2);
+ }});
+  
 
+  
 
-
-
-
+  
   

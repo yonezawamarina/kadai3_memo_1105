@@ -3,6 +3,11 @@ body {
   font-family: 'Helvetica', 'Arial', sans-serif;
   margin: 0 auto;
   padding: 20px;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 div.content {
